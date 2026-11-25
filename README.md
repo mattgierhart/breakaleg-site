@@ -7,7 +7,7 @@ Plain static HTML, no build step. The same files are served by two hosts:
 
 | Host | URL | Notes |
 | --- | --- | --- |
-| Cloudflare Pages | https://break-a-leg.app/ | Primary home. Production branch `main`, build command none, output directory `/`. Uses `_headers` and `_redirects`. |
+| Cloudflare Pages | https://break-a-leg.app/ | Primary home once the Cloudflare Pages project and custom domain are set up (in progress 2026-11-25). Production branch `main`, build command none, output directory `/`. Uses `_headers` and `_redirects`. |
 | GitHub Pages | https://mattgierhart.github.io/breakaleg-site/ | Legacy. These URLs were submitted with 1.0, so they keep serving the same pages. `.nojekyll` makes GitHub serve files as-is. |
 
 | Page | Path | Used by |
@@ -24,6 +24,17 @@ Rules:
 - The privacy text must match App Privacy ("Data Not Collected") and `App/Resources/PrivacyInfo.xcprivacy`.
   The app repo keeps copies in `appstore/privacy-policy.md` and `appstore/support.md`; change both together.
 - App Store buttons link to `https://apps.apple.com/app/id6834977811`; the `apple-itunes-app` meta tag shows Safari's smart banner.
-- Images in `assets/img/` are downsized from the App Store marketing screenshots and icon D.
+- Images in `assets/img/`: `01-` to `06-` and `dev-*.webp` are downsized App Store screenshots (1.0 UI); `icon-*`,
+  `favicon-32.png` and `apple-touch-icon.png` come from icon D; `lighthouse-m/-d.webp` (stage hero),
+  `lighthouse-loop-m/-d.mp4` (ambient loop, added by JS only without reduced motion or save-data),
+  `rehearse-home*.webp` and `curtain-call*.webp` are Higgsfield illustrations in the same paper-cutout diorama
+  style as the app's 1.1 art (DES-011 in the app repo). No people or faces in the art.
+- When 1.1 ships, swap the `01-` to `06-` and `dev-*` screenshots for the 1.1 set (project files `appstore/1.1/`).
 
 Contact address: developer@gearheartai.org.
+
+## Status (2026-11-25)
+
+- Merged: #1 README, #2 static rebuild (landing, privacy, support), #3 mobile-first redesign, #4 Lighthouse Cat hero art and live App Store buttons.
+- App Store Connect still points at the GitHub Pages URLs. Switch Support, Marketing and Privacy URLs to
+  break-a-leg.app with the 1.1 submission, after 1.0 is approved; keep the github.io pages serving identical content.
