@@ -10,7 +10,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/landing.css">
-<link rel="preload" as="image" href="assets/img/dev-01-stage.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/img/stage-m.webp" type="image/webp" media="(max-width:759px)">
+<link rel="preload" as="image" href="assets/img/stage-d.webp" type="image/webp" media="(min-width:760px)">
 <meta name="theme-color" content="#1b0507">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Break a Leg: Line Rehearsal">
@@ -33,12 +34,14 @@
 </header>
 
 <main id="main">
-  <!-- Stage hero: curtains, valance and spotlight are pure CSS -->
+  <!-- Stage hero: painted backdrop (Higgsfield) with an optional ambient loop added by the script below -->
   <div class="stage">
-    <div class="valance" aria-hidden="true"></div>
-    <div class="fringe" aria-hidden="true"></div>
-    <div class="curtain left" aria-hidden="true"></div>
-    <div class="curtain right" aria-hidden="true"></div>
+    <div class="stage-bg" aria-hidden="true">
+      <picture>
+        <source media="(min-width:760px)" srcset="assets/img/stage-d.webp" width="1920" height="1086">
+        <img src="assets/img/stage-m.webp" width="900" height="1125" alt="" fetchpriority="high">
+      </picture>
+    </div>
     <div class="stage-inner">
       <img class="app-icon" src="assets/img/icon-512.png" alt="Break a Leg app icon" width="76" height="76">
       <h1>The cast reads the rest. <em>You</em> say your line.</h1>
@@ -50,7 +53,7 @@
       </div>
       <div class="device">
         <div class="cue" aria-hidden="true">Your turn!</div>
-        <img src="assets/img/dev-01-stage.webp" width="1200" height="910" alt="Break a Leg on iPad: the other characters' lines are read aloud, and an orange panel says Your turn! with a big Done button." fetchpriority="high">
+        <img src="assets/img/dev-01-stage.webp" width="1200" height="910" alt="Break a Leg on iPad: the other characters' lines are read aloud, and an orange panel says Your turn! with a big Done button.">
       </div>
     </div>
     <div class="floor" aria-hidden="true"></div>
@@ -86,6 +89,12 @@
       <p class="eyebrow">Made for young actors</p>
       <h2>Big buttons. Clear cues. Real progress.</h2>
       <p class="lede">Designed for kids about 6 to 12, so they can rehearse on their own.</p>
+      <figure class="art">
+        <picture>
+          <source media="(min-width:760px)" srcset="assets/img/rehearse-home.webp">
+          <img src="assets/img/rehearse-home-m.webp" width="1200" height="797" loading="lazy" alt="Illustration: a child in a star sweater practices lines from a paper script in the living room while the iPad voices the other characters.">
+        </picture>
+      </figure>
       <div class="bento" role="list">
         <div class="tile t-orange wide" role="listitem">
           <h3>"Your turn!"</h3>
@@ -159,6 +168,12 @@
   </section>
 
   <section class="finale">
+    <div class="finale-art" aria-hidden="true">
+      <picture>
+        <source media="(min-width:760px)" srcset="assets/img/curtain-call.webp">
+        <img src="assets/img/curtain-call-m.webp" width="1600" height="905" loading="lazy" alt="">
+      </picture>
+    </div>
     <div class="wrap">
       <div class="stars" aria-hidden="true">★★★</div>
       <h2>Break a leg!</h2>
@@ -177,5 +192,24 @@
     <nav aria-label="Footer"><a href="support/">Support</a><a href="privacy/">Privacy Policy</a></nav>
   </div>
 </footer>
+<script>
+/* Ambient stage loop: only when motion is welcome and data saver is off; the still backdrop stays as poster and fallback. */
+(function(){
+  var bg=document.querySelector('.stage-bg'); if(!bg||!window.matchMedia) return;
+  var c=navigator.connection;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||(c&&c.saveData)) return;
+  var wide=matchMedia('(min-width:760px)').matches;
+  var v=document.createElement('video');
+  v.muted=true; v.loop=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true');
+  v.preload='auto'; v.poster='assets/img/'+(wide?'stage-d.webp':'stage-m.webp');
+  v.src='assets/img/'+(wide?'stage-loop-d.mp4':'stage-loop-m.mp4');
+  v.addEventListener('playing',function(){bg.classList.add('is-playing')},{once:true});
+  bg.appendChild(v);
+  var play=function(){var p=v.play(); if(p&&p.catch) p.catch(function(){});};
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){e[0].isIntersecting?play():v.pause()}).observe(bg);
+  } else play();
+})();
+</script>
 </body>
 </html>
