@@ -1,15 +1,30 @@
 # breakaleg-site
 
-Public pages for **Break a Leg: Line Rehearsal**, the iPad app built in
-[`mattgierhart/ipad-line-reader`](https://github.com/mattgierhart/ipad-line-reader). Served by GitHub Pages
-(Jekyll, `jekyll-theme-minimal`) at https://mattgierhart.github.io/breakaleg-site/.
+Public website for **Break a Leg: Line Rehearsal**, the iPad app built in
+[`mattgierhart/ipad-line-reader`](https://github.com/mattgierhart/ipad-line-reader).
 
-| Page | URL | Used by |
+Plain static HTML, no build step. The same files are served by two hosts:
+
+| Host | URL | Notes |
 | --- | --- | --- |
-| `index.md` | `/` | Landing page |
-| `support.md` | `/support/` | App Store Connect support URL (required) |
-| `privacy.md` | `/privacy/` | App Store Connect privacy policy URL (required) |
+| Cloudflare Pages | https://break-a-leg.app/ | Primary home. Production branch `main`, build command none, output directory `/`. Uses `_headers` and `_redirects`. |
+| GitHub Pages | https://mattgierhart.github.io/breakaleg-site/ | Legacy. These URLs were submitted with 1.0, so they keep serving the same pages. `.nojekyll` makes GitHub serve files as-is. |
 
-These URLs are live in the App Store listing (1.0 submitted 2026-11-15), so keep the permalinks stable.
-The page text also lives in the app repo under `appstore/privacy-policy.md` and `appstore/support.md`;
-change both copies together. Contact address: developer@gearheartai.org.
+| Page | Path | Used by |
+| --- | --- | --- |
+| `index.html` | `/` | Landing page (App Store Connect Marketing URL) |
+| `support/index.html` | `/support/` | App Store Connect Support URL (required) |
+| `privacy/index.html` | `/privacy/` | App Store Connect Privacy Policy URL (required) |
+| `404.html` | any missing path | Not-found page |
+
+Rules:
+
+- Keep `/support/` and `/privacy/` stable; they are live in the App Store listing.
+- All links and asset paths are relative so the pages work under the GitHub Pages `/breakaleg-site/` subpath.
+- The privacy text must match App Privacy ("Data Not Collected") and `App/Resources/PrivacyInfo.xcprivacy`.
+  The app repo keeps copies in `appstore/privacy-policy.md` and `appstore/support.md`; change both together.
+- When 1.0 is live, swap the `APP_STORE_LINK` placeholder in `index.html` for the App Store link
+  (`https://apps.apple.com/app/id6834977811`) and add the `apple-itunes-app` meta tag.
+- Images in `assets/img/` are downsized from the App Store marketing screenshots and icon D.
+
+Contact address: developer@gearheartai.org.
