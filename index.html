@@ -10,8 +10,8 @@
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css">
 <link rel="stylesheet" href="assets/landing.css">
-<link rel="preload" as="image" href="assets/img/stage-m.webp" type="image/webp" media="(max-width:759px)">
-<link rel="preload" as="image" href="assets/img/stage-d.webp" type="image/webp" media="(min-width:760px)">
+<link rel="preload" as="image" href="assets/img/lighthouse-m.webp" type="image/webp" media="(max-width:759px)">
+<link rel="preload" as="image" href="assets/img/lighthouse-d.webp" type="image/webp" media="(min-width:760px)">
 <meta name="theme-color" content="#1b0507">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Break a Leg: Line Rehearsal">
@@ -38,8 +38,8 @@
   <div class="stage">
     <div class="stage-bg" aria-hidden="true">
       <picture>
-        <source media="(min-width:760px)" srcset="assets/img/stage-d.webp" width="1920" height="1086">
-        <img src="assets/img/stage-m.webp" width="900" height="1125" alt="" fetchpriority="high">
+        <source media="(min-width:760px)" srcset="assets/img/lighthouse-d.webp" width="1920" height="1080">
+        <img src="assets/img/lighthouse-m.webp" width="900" height="1125" alt="" fetchpriority="high">
       </picture>
     </div>
     <div class="stage-inner">
@@ -200,8 +200,8 @@
   var wide=matchMedia('(min-width:760px)').matches;
   var v=document.createElement('video');
   v.muted=true; v.loop=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true');
-  v.preload='auto'; v.poster='assets/img/'+(wide?'stage-d.webp':'stage-m.webp');
-  v.src='assets/img/'+(wide?'stage-loop-d.mp4':'stage-loop-m.mp4');
+  v.preload='auto'; v.poster='assets/img/'+(wide?'lighthouse-d.webp':'lighthouse-m.webp');
+  v.src='assets/img/'+(wide?'lighthouse-loop-d.mp4':'lighthouse-loop-m.mp4');
   v.addEventListener('playing',function(){bg.classList.add('is-playing')},{once:true});
   bg.appendChild(v);
   var play=function(){var p=v.play(); if(p&&p.catch) p.catch(function(){});};

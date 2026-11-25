@@ -16,7 +16,7 @@
 .stage-bg.is-playing video{opacity:1}
 .stage-bg::after{ /* keep the headline readable over the curtains */
   content:"";position:absolute;inset:0;
-  background:radial-gradient(62% 46% at 50% 40%,rgba(18,3,4,.55),rgba(18,3,4,0) 75%),linear-gradient(180deg,rgba(18,3,4,.25),rgba(18,3,4,0) 30%)}
+  background:radial-gradient(64% 48% at 50% 42%,rgba(18,3,4,.62),rgba(18,3,4,0) 75%),linear-gradient(180deg,rgba(18,3,4,.25),rgba(18,3,4,0) 30%)}
 .stage-inner{position:relative;z-index:2;padding:72px 28px 0;max-width:1100px;margin:0 auto}
 .stage .app-icon{width:76px;height:76px;border-radius:18px;margin:0 auto 18px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
 .tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
