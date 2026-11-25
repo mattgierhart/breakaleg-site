@@ -2,23 +2,26 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Break a Leg: Line Rehearsal for iPad</title>
-<meta name="description" content="Break a Leg reads everyone else's lines so your child can practice theirs. An iPad line rehearsal app for kids in school and church plays. No account, no ads, no tracking.">
+<meta name="description" content="Break a Leg reads everyone else's lines so your child can practice theirs. An iPad line rehearsal app for kids in school, church and community plays. No account, no ads, no tracking.">
 <link rel="canonical" href="https://break-a-leg.app/">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/site.css">
-<meta name="theme-color" content="#FF9500">
+<link rel="stylesheet" href="assets/landing.css">
+<link rel="preload" as="image" href="assets/img/lighthouse-m.webp" type="image/webp" media="(max-width:759px)">
+<link rel="preload" as="image" href="assets/img/lighthouse-d.webp" type="image/webp" media="(min-width:760px)">
+<meta name="theme-color" content="#1b0507">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Break a Leg: Line Rehearsal">
 <meta property="og:description" content="Your child's scene partner for every rehearsal. Scan the script, pick their part, and practice anytime.">
 <meta property="og:url" content="https://break-a-leg.app/">
 <meta property="og:image" content="https://break-a-leg.app/assets/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<!-- When 1.0 is live, add: <meta name="apple-itunes-app" content="app-id=6834977811"> -->
+<meta name="apple-itunes-app" content="app-id=6834977811">
 </head>
-<body>
+<body class="l">
 <a class="skip" href="#main">Skip to content</a>
 <header class="top">
   <div class="wrap">
@@ -31,58 +34,109 @@
 </header>
 
 <main id="main">
-  <div class="hero">
-    <div class="wrap">
-      <img class="icon" src="assets/img/icon-512.png" alt="Break a Leg app icon" width="112" height="112">
-      <h1>Practice lines anytime.<br>The cast reads the rest.</h1>
-      <p class="sub">Break a Leg reads everyone else's lines so your child can practice theirs. Made for iPad, for kids in school, church and community plays.</p>
-      <div class="cta">
-        <!-- APP_STORE_LINK: swap this span for <a class="btn btn-dark" href="https://apps.apple.com/app/id6834977811">Download on the App Store</a> once 1.0 is live -->
-        <span class="btn btn-dark">Coming soon to the App Store <small>iPad</small></span>
-        <a class="btn btn-light" href="#how">See how it works</a>
-      </div>
-      <img class="shot" src="assets/img/01-stage.jpg" width="1376" height="1032" alt="The rehearsal stage: the other characters' lines are read aloud, and an orange panel says Your turn! with a big Done button.">
+  <!-- Stage hero: painted backdrop (Higgsfield) with an optional ambient loop added by the script below -->
+  <div class="stage">
+    <div class="stage-bg" aria-hidden="true">
+      <picture>
+        <source media="(min-width:760px)" srcset="assets/img/lighthouse-d.webp" width="1920" height="1080">
+        <img src="assets/img/lighthouse-m.webp" width="900" height="1125" alt="" fetchpriority="high">
+      </picture>
     </div>
+    <div class="stage-inner">
+      <img class="app-icon" src="assets/img/icon-512.png" alt="Break a Leg app icon" width="76" height="76">
+      <h1>The cast reads the rest. <em>You</em> say your line.</h1>
+      <p class="sub">Break a Leg reads every other part out loud, so kids in school, church and community plays can rehearse their lines anytime, no grown-up script reader needed.</p>
+      <div class="cta-row">
+        <a class="btn btn-store" href="https://apps.apple.com/app/id6834977811"><svg class="apple" viewBox="0 0 384 512" width="20" height="24" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span class="lines"><small>Download on the</small>App Store</span></a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
+      </div>
+      <div class="device">
+        <div class="cue" aria-hidden="true">Your turn!</div>
+        <img src="assets/img/dev-01-stage.webp" width="1200" height="910" alt="Break a Leg on iPad: the other characters' lines are read aloud, and an orange panel says Your turn! with a big Done button.">
+      </div>
+    </div>
+    <div class="floor" aria-hidden="true"></div>
   </div>
 
   <section id="how">
     <div class="wrap">
       <p class="eyebrow">How it works</p>
-      <h2>From script pages to stage-ready in minutes</h2>
-      <p class="lede">No more waiting for a grown-up to read every other part. Bring the script home from rehearsal and practice whenever your child is ready.</p>
-      <div class="steps">
-        <div class="card"><div class="num">1</div><h3>Add the script</h3><p>Scan the pages from rehearsal with the iPad camera, open a PDF, or paste the text. Break a Leg finds the characters and their lines.</p></div>
-        <div class="card"><div class="num">2</div><h3>Pick your part</h3><p>Your child chooses who they're playing. Every other character gets a voice of their own.</p></div>
-        <div class="card"><div class="num">3</div><h3>Rehearse</h3><p>The cast reads the scene. When it's your child's turn, a chime plays and their line lights up in orange. They say it out loud and tap Done.</p></div>
+      <h2>Script in. Scene partner out.</h2>
+      <p class="lede">Bring the pages home from rehearsal. In a few minutes your child is practicing with a full cast.</p>
+      <div class="flow">
+        <div class="step">
+          <div class="shot"><img src="assets/img/dev-02-addScript.webp" width="1200" height="910" loading="lazy" alt="Add Script sheet with Scan Pages, Open a PDF and Paste Text."></div>
+          <h3><span class="num">1</span>Add the script</h3>
+          <p>Scan the pages with the iPad camera, open a PDF, or paste the text. Break a Leg finds every character and line.</p>
+        </div>
+        <div class="step">
+          <div class="shot"><img src="assets/img/dev-03-rolePick.webp" width="1200" height="910" loading="lazy" alt="Who are you playing? screen with a card for each character."></div>
+          <h3><span class="num">2</span>Pick your part</h3>
+          <p>Your child taps who they're playing. Every other character gets a voice of their own.</p>
+        </div>
+        <div class="step">
+          <div class="shot"><img src="assets/img/dev-01-stage.webp" width="1200" height="910" loading="lazy" alt="Rehearsal stage with the child's line highlighted in orange."></div>
+          <h3><span class="num">3</span>Rehearse</h3>
+          <p>The cast reads the scene. A chime plays on your child's turn and their line lights up. They say it, then tap Done.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="soft">
-    <div class="wrap two">
-      <div class="card">
-        <p class="eyebrow">Made for young actors</p>
-        <h2>Big buttons, clear cues</h2>
-        <ul class="ticks">
-          <li>A clear "Your turn!" cue with no time limit</li>
-          <li>Peek or Hear My Line when they get stuck</li>
-          <li>Learn in steps: full lines, then first letters, then from memory</li>
-          <li>Earn up to three stars for every scene</li>
-          <li>Add feelings like Brave or Silly to practice expression</li>
-        </ul>
+    <div class="wrap">
+      <p class="eyebrow">Made for young actors</p>
+      <h2>Big buttons. Clear cues. Real progress.</h2>
+      <p class="lede">Designed for kids about 6 to 12, so they can rehearse on their own.</p>
+      <figure class="art">
+        <picture>
+          <source media="(min-width:760px)" srcset="assets/img/rehearse-home.webp">
+          <img src="assets/img/rehearse-home-m.webp" width="1200" height="797" loading="lazy" alt="Illustration: a child in a star sweater practices lines from a paper script in the living room while the iPad voices the other characters.">
+        </picture>
+      </figure>
+      <div class="bento" role="list">
+        <div class="tile t-orange wide" role="listitem">
+          <h3>"Your turn!"</h3>
+          <p>A chime and a bright orange cue tell them when to speak. No timer, no pressure.</p>
+          <div class="big" aria-hidden="true">★</div>
+        </div>
+        <div class="tile t-blue" role="listitem">
+          <h3>A voice for every character</h3>
+          <p>The narrator, the captain, the cat. Each part sounds different.</p>
+          <div class="big" aria-hidden="true">🎭</div>
+        </div>
+        <div class="tile t-green" role="listitem">
+          <h3>Learn in steps</h3>
+          <p>Full lines, then first letters, then from memory.</p>
+          <div class="big" aria-hidden="true">1·2·3</div>
+        </div>
+        <div class="tile t-cream" role="listitem">
+          <h3>Stuck? Peek.</h3>
+          <p>Peek shows the line. Hear My Line reads it to them.</p>
+          <div class="big" aria-hidden="true">👀</div>
+        </div>
+        <div class="tile t-purple" role="listitem">
+          <h3>Stars and feelings</h3>
+          <p>Earn up to three stars a scene. Add Brave, Silly or Shy to practice expression.</p>
+          <div class="big" aria-hidden="true">★★★</div>
+        </div>
       </div>
-      <div class="card">
-        <p class="eyebrow">Made for families</p>
-        <h2>Private by design</h2>
-        <ul class="ticks">
-          <li>No account and no sign-in</li>
-          <li>No ads, no analytics and no tracking</li>
-          <li>Scripts stay on your iPad. Pages are read on the device and photos are deleted once checked</li>
-          <li>Purchases and settings sit behind a grown-up check</li>
-          <li>Family Sharing for every purchase</li>
-        </ul>
-        <p style="margin:16px 0 0"><a href="privacy/">Read the privacy policy</a></p>
+      <p class="swipe-hint">Swipe for more</p>
+    </div>
+  </section>
+
+  <section class="promise">
+    <div class="wrap">
+      <p class="eyebrow" style="color:var(--gold)">Made for families</p>
+      <h2>Private by design</h2>
+      <p class="lede">Your child's scripts never leave your iPad. We don't run a server for the app, so there's nowhere for their information to go.</p>
+      <div class="promise-grid">
+        <div class="pill"><span class="ic" aria-hidden="true">🙅</span><b>No account</b><span>No sign-in, ever.</span></div>
+        <div class="pill"><span class="ic" aria-hidden="true">🚫</span><b>No ads or tracking</b><span>No analytics either.</span></div>
+        <div class="pill"><span class="ic" aria-hidden="true">📱</span><b>Stays on the iPad</b><span>Pages are read on the device; photos are deleted once checked.</span></div>
+        <div class="pill"><span class="ic" aria-hidden="true">🔒</span><b>Grown-up check</b><span>Purchases and settings are locked. Family Sharing included.</span></div>
       </div>
+      <p style="margin:22px 0 0"><a href="privacy/">Read the privacy policy</a></p>
     </div>
   </section>
 
@@ -90,23 +144,42 @@
     <div class="wrap">
       <p class="eyebrow">A look inside</p>
       <h2>Everything a young actor needs</h2>
-      <p class="lede">Try it with the sample play, The Lighthouse Cat. Your first script is included, and you can add more scripts one at a time or unlock unlimited scripts.</p>
-      <div class="gallery">
-        <img src="assets/img/02-addScript.jpg" width="1376" height="1032" loading="lazy" alt="Add a script: scan pages, open a PDF, or paste text.">
-        <img src="assets/img/03-rolePick.jpg" width="1376" height="1032" loading="lazy" alt="Pick your part from the cast list.">
-        <img src="assets/img/04-scriptHome.jpg" width="1376" height="1032" loading="lazy" alt="Scenes with stars and the three learning steps.">
-        <img src="assets/img/05-myLines.jpg" width="1376" height="1032" loading="lazy" alt="My Lines, with a feeling added to each line.">
+      <p class="lede">Try it free with the sample play, The Lighthouse Cat. Your first script is included; add more one at a time or unlock unlimited scripts.</p>
+      <div class="strip">
+        <figure><img src="assets/img/dev-06-shelf.webp" width="1200" height="910" alt="The Shelf with scripts and a big Rehearse button."><figcaption>Your shelf of scripts<span>One tap on Rehearse picks up where they left off.</span></figcaption></figure>
+        <figure><img src="assets/img/dev-04-scriptHome.webp" width="1200" height="910" alt="Scene list with stars and the three learning steps."><figcaption>Scene by scene<span>Stars show what's learned and what's next.</span></figcaption></figure>
+        <figure><img src="assets/img/dev-05-myLines.webp" width="1200" height="910" alt="My Lines with a feeling next to each line."><figcaption>My Lines<span>Just their lines, with a feeling for each one.</span></figcaption></figure>
       </div>
     </div>
   </section>
 
-  <section class="soft closing">
+  <section class="soft">
     <div class="wrap">
+      <h2 class="center">Questions from parents</h2>
+      <p class="lede center">More answers on the <a href="support/">support page</a>.</p>
+      <div class="mini-faq">
+        <details><summary>Does it work with any script?</summary><p>Yes. Scan printed pages, open a PDF, or paste the text. If a line is unclear, the app asks you to check it before rehearsing.</p></details>
+        <details><summary>Do we need an account or internet?</summary><p>No account. Everything happens on the iPad, and voices use the ones already installed on it.</p></details>
+        <details><summary>What does it cost?</summary><p>Your first script is included and the sample play is free. Add more scripts one at a time or unlock unlimited scripts, all with Family Sharing.</p></details>
+        <details><summary>Which devices does it run on?</summary><p>iPad with iPadOS 26 or later.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="finale">
+    <div class="finale-art" aria-hidden="true">
+      <picture>
+        <source media="(min-width:760px)" srcset="assets/img/curtain-call.webp">
+        <img src="assets/img/curtain-call-m.webp" width="1600" height="905" loading="lazy" alt="">
+      </picture>
+    </div>
+    <div class="wrap">
+      <div class="stars" aria-hidden="true">★★★</div>
       <h2>Break a leg!</h2>
-      <p class="lede" style="margin:0 auto">Questions or ideas? We'd love to hear from you.</p>
-      <div class="cta">
-        <a class="btn btn-dark" href="support/">Get support</a>
-        <a class="btn btn-light" href="mailto:developer@gearheartai.org">Email us</a>
+      <p class="lede" style="margin:0 auto 26px;max-width:34ch">Opening night gets a lot less scary when every line has had a rehearsal.</p>
+      <div class="cta-row" style="margin-bottom:0">
+        <a class="btn btn-store" href="https://apps.apple.com/app/id6834977811"><svg class="apple" viewBox="0 0 384 512" width="20" height="24" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg><span class="lines"><small>Download on the</small>App Store</span></a>
+        <a class="btn btn-ghost" href="mailto:developer@gearheartai.org">Email us</a>
       </div>
     </div>
   </section>
@@ -118,5 +191,24 @@
     <nav aria-label="Footer"><a href="support/">Support</a><a href="privacy/">Privacy Policy</a></nav>
   </div>
 </footer>
+<script>
+/* Ambient stage loop: only when motion is welcome and data saver is off; the still backdrop stays as poster and fallback. */
+(function(){
+  var bg=document.querySelector('.stage-bg'); if(!bg||!window.matchMedia) return;
+  var c=navigator.connection;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches||(c&&c.saveData)) return;
+  var wide=matchMedia('(min-width:760px)').matches;
+  var v=document.createElement('video');
+  v.muted=true; v.loop=true; v.playsInline=true; v.setAttribute('playsinline',''); v.setAttribute('aria-hidden','true');
+  v.preload='auto'; v.poster='assets/img/'+(wide?'lighthouse-d.webp':'lighthouse-m.webp');
+  v.src='assets/img/'+(wide?'lighthouse-loop-d.mp4':'lighthouse-loop-m.mp4');
+  v.addEventListener('playing',function(){bg.classList.add('is-playing')},{once:true});
+  bg.appendChild(v);
+  var play=function(){var p=v.play(); if(p&&p.catch) p.catch(function(){});};
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){e[0].isIntersecting?play():v.pause()}).observe(bg);
+  } else play();
+})();
+</script>
 </body>
 </html>
