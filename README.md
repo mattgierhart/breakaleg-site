@@ -12,7 +12,7 @@ Plain static HTML, no build step. The same files are served by two hosts:
 
 | Page | Path | Used by |
 | --- | --- | --- |
-| `index.html` | `/` | Landing page (App Store Connect Marketing URL) |
+| `index.html` + `assets/landing.css` | `/` | Landing page (App Store Connect Marketing URL). Mobile first; the stage curtains are pure CSS. |
 | `support/index.html` | `/support/` | App Store Connect Support URL (required) |
 | `privacy/index.html` | `/privacy/` | App Store Connect Privacy Policy URL (required) |
 | `404.html` | any missing path | Not-found page |
