@@ -27,7 +27,8 @@
 .cta-row{display:flex;flex-direction:column;align-items:stretch;gap:10px;max-width:340px;margin:0 auto 32px}
 .l .btn{height:54px;border-radius:27px;justify-content:center;font-size:17px;font-weight:700}
 .btn-ghost{background:rgba(255,246,230,.1);color:var(--cream);border:1px solid rgba(255,246,230,.25)}
-.btn-store{background:#000;color:#fff;border:1px solid rgba(255,255,255,.25);cursor:default}
+.btn-store{background:#000;color:#fff;border:1px solid rgba(255,255,255,.25);gap:10px;text-decoration:none}
+.btn-store .apple{flex:none;margin-top:-2px}
 .btn-store small{font-weight:600;opacity:.7;font-size:12px;display:block;line-height:1}
 .btn-store .lines{display:flex;flex-direction:column;align-items:flex-start;gap:3px;line-height:1.05}
 .device{position:relative;margin:0 auto;max-width:880px}

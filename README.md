@@ -23,8 +23,7 @@ Rules:
 - All links and asset paths are relative so the pages work under the GitHub Pages `/breakaleg-site/` subpath.
 - The privacy text must match App Privacy ("Data Not Collected") and `App/Resources/PrivacyInfo.xcprivacy`.
   The app repo keeps copies in `appstore/privacy-policy.md` and `appstore/support.md`; change both together.
-- When 1.0 is live, swap the `APP_STORE_LINK` placeholder in `index.html` for the App Store link
-  (`https://apps.apple.com/app/id6834977811`) and add the `apple-itunes-app` meta tag.
+- App Store buttons link to `https://apps.apple.com/app/id6834977811`; the `apple-itunes-app` meta tag shows Safari's smart banner.
 - Images in `assets/img/` are downsized from the App Store marketing screenshots and icon D.
 
 Contact address: developer@gearheartai.org.
