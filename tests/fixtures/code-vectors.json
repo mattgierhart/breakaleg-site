@@ -1,0 +1,90 @@
+{
+  "alphabet": "23456789ABCDEFGHJKLMNPQRSTVWXYZ",
+  "valid": [
+    {
+      "code": "22222222",
+      "display": "2222-2222"
+    },
+    {
+      "code": "ZZZZZZZ5",
+      "display": "ZZZZ-ZZZ5"
+    },
+    {
+      "code": "KDSTAGEJ",
+      "display": "KDST-AGEJ"
+    },
+    {
+      "code": "7Q4MXN98",
+      "display": "7Q4M-XN98"
+    },
+    {
+      "code": "ABCDEFGV",
+      "display": "ABCD-EFGV"
+    },
+    {
+      "code": "H3LP9WYX",
+      "display": "H3LP-9WYX"
+    },
+    {
+      "code": "M2N8PV6N",
+      "display": "M2N8-PV6N"
+    },
+    {
+      "code": "R5T7XYZX",
+      "display": "R5T7-XYZX"
+    }
+  ],
+  "normalise": [
+    {
+      "input": " 7q4m-xn98 ",
+      "code": "7Q4MXN98"
+    },
+    {
+      "input": "KDST AGEJ",
+      "code": "KDSTAGEJ"
+    },
+    {
+      "input": "https://break-a-leg.app/show/H3LP9WYX",
+      "code": "H3LP9WYX",
+      "note": "URL form: take last path component, then normalise"
+    }
+  ],
+  "invalid": [
+    {
+      "input": "7Q4MXN92",
+      "reason": "bad check character"
+    },
+    {
+      "input": "BACDEFGV",
+      "reason": "adjacent transposition"
+    },
+    {
+      "input": "ABCD-EFG",
+      "reason": "too short"
+    },
+    {
+      "input": "ABCDEFGHJ",
+      "reason": "too long"
+    },
+    {
+      "input": "ABCD0EFG",
+      "reason": "0 not in alphabet"
+    },
+    {
+      "input": "ABCDIEFG",
+      "reason": "I not in alphabet"
+    },
+    {
+      "input": "ABCDOEFG",
+      "reason": "O not in alphabet"
+    },
+    {
+      "input": "ABCDUEFG",
+      "reason": "U not in alphabet"
+    },
+    {
+      "input": "",
+      "reason": "empty"
+    }
+  ]
+}

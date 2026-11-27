@@ -1,0 +1,17 @@
+# Example Cloudflare Pages configuration for the KV binding. NOT USED: this file is deliberately not named wrangler.toml.
+#
+# Why: a wrangler.toml that contains `pages_build_output_dir` becomes the source of truth for the Pages project and
+# switches off bindings set in the dashboard, so a placeholder namespace id here would break deploys. The binding is
+# therefore set in the Cloudflare dashboard (see README, "Show codes: one-time Cloudflare setup").
+# Local development does not need this file either: `npm run dev` passes `--kv SHOWS` to wrangler.
+#
+# If you ever move the project to config-as-code, copy this to wrangler.toml and fill in the real id.
+
+name = "breakaleg-site"
+pages_build_output_dir = "."
+compatibility_date = "2024-09-23"
+
+[[kv_namespaces]]
+binding = "SHOWS"
+id = "SET_IN_CLOUDFLARE_DASHBOARD"          # placeholder, not a real id
+preview_id = "SET_IN_CLOUDFLARE_DASHBOARD"  # placeholder, not a real id
