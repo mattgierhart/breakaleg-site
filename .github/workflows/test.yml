@@ -1,0 +1,26 @@
+name: Unit tests
+
+on:
+  pull_request:
+    paths: ['functions/**', 'tools/**', 'tests/**', 'package.json', 'package-lock.json']
+  push:
+    branches: [main]
+    paths: ['functions/**', 'tools/**', 'tests/**', 'package.json', 'package-lock.json']
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      # The unit tests need no Cloudflare binaries (wrangler is only for `npm run dev` and `npm run e2e`),
+      # so skip the optional platform downloads (workerd, esbuild) and install scripts.
+      - run: npm ci --omit=optional --ignore-scripts
+      - run: npm test
