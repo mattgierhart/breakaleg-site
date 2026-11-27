@@ -6,3 +6,6 @@
 
 /assets/*
   Cache-Control: public, max-age=604800
+
+/cast-pack/thanks/*
+  X-Robots-Tag: noindex, nofollow

@@ -86,6 +86,7 @@
 .pill span{color:#aeaeb2;font-size:14px;line-height:1.35}
 .pill .ic{font-size:26px}
 .promise a{color:var(--gold)}
+.promise-note{margin:22px 0 0;max-width:62ch;color:#c7c7cc;font-size:16px;line-height:1.5}
 
 /* screenshot strip */
 .strip{display:grid;grid-auto-flow:column;grid-auto-columns:88%;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
@@ -112,13 +113,62 @@
 .finale h2{color:var(--cream)}
 .finale .lede{color:rgba(255,246,230,.8)}
 
+/* Cast Pack for directors */
+#directors{scroll-margin-top:64px}
+.nav a[href="#directors"]{display:none}
+.cast{display:grid;gap:28px}
+.cast-steps .step{gap:8px}
+.cast-card{background:var(--bg-soft);border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:12px;align-self:start}
+.cast-price{font-family:var(--round);font-size:22px;font-weight:700;margin:0}
+.cast-price b{font-size:56px;line-height:1;font-weight:800;letter-spacing:-.02em}
+.cast-note{margin:0;color:var(--sec)}
+.cast-card .btn{align-self:stretch;margin-top:4px;background:var(--orange);color:#000}
+.cast-fine{margin:0;font-size:14px;line-height:1.4;color:var(--sec)}
+
+
+/* Show link page (/show/<code>) and Cast Pack pages. Dark house, gold code, same tokens as the stage. */
+.l .show-hero{background:radial-gradient(120% 90% at 50% 0%,#4a0d14 0%,#1b0507 62%,#120304 100%);color:var(--cream);text-align:center;padding:48px 0 64px}
+.l .show-hero .eyebrow{color:var(--gold)}
+.show-wrap{max-width:560px}
+.show-code{font-family:ui-monospace,"SF Mono",Menlo,Consolas,monospace;font-weight:800;font-size:clamp(34px,11vw,60px);letter-spacing:.06em;line-height:1.1;
+  color:var(--gold);background:rgba(247,193,75,.1);border:1px solid rgba(247,193,75,.35);border-radius:24px;padding:20px 12px;margin:0 0 28px;
+  -webkit-user-select:all;user-select:all;overflow-wrap:anywhere}
+.show-hero h1{font-family:var(--round);font-size:clamp(30px,8vw,44px);line-height:1.08;font-weight:800;letter-spacing:-.02em;margin:0 0 12px;text-wrap:balance}
+.show-lede{font-size:18px;line-height:1.45;margin:0 0 14px;color:rgba(255,246,230,.85)}
+.show-steps{list-style:none;margin:24px 0 8px;padding:0;display:grid;gap:12px;text-align:left}
+.show-steps li{display:flex;gap:14px;align-items:flex-start;background:rgba(255,246,230,.07);border:1px solid rgba(255,246,230,.14);border-radius:20px;padding:16px}
+.show-steps b{display:block;font-family:var(--round);font-size:19px;margin-bottom:2px}
+.show-steps span:not(.num){display:block;color:rgba(255,246,230,.8);font-size:16px;line-height:1.4}
+.show-steps em{font-style:normal;font-weight:700;color:var(--gold)}
+.show-cta{margin:26px auto 0}
+.l .btn-primary{background:var(--orange);color:#000}
+
+.l .cp-hero{background:radial-gradient(120% 90% at 50% 0%,#4a0d14 0%,#1b0507 62%,#120304 100%);color:var(--cream);padding:56px 0 48px;text-align:center}
+.l .cp-hero .eyebrow{color:var(--gold);margin-bottom:16px}
+.cp-hero h1{font-family:var(--round);font-size:clamp(32px,8vw,52px);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin:0 auto 12px;max-width:16ch;text-wrap:balance}
+.cp-hero p{font-size:18px;color:rgba(255,246,230,.85);margin:0 auto;max-width:36ch}
+.l .cp-body{padding:48px 0 64px}
+.cp-list{list-style:none;margin:0 0 28px;padding:0}
+.cp-list li{padding:10px 0 10px 34px;position:relative;border-bottom:.5px solid var(--line)}
+.cp-list li:last-child{border-bottom:0}
+.cp-list li::before{content:"★";position:absolute;left:4px;top:9px;color:var(--orange);font-size:18px}
+.cp-h{font-family:var(--round);font-size:24px;line-height:1.15;margin:0 0 14px}
+.cast-card .pay-note{margin:0;font-size:14px;line-height:1.4;color:var(--sec)}
+.next-steps{list-style:none;margin:0 0 28px;padding:0;display:grid;gap:14px;max-width:640px}
+.next-steps li{display:flex;gap:14px;align-items:flex-start;background:var(--bg-soft);border-radius:22px;padding:18px}
+.next-steps b{display:block;font-family:var(--round);font-size:19px;margin-bottom:2px}
+.next-steps span:not(.num){display:block;color:var(--sec)}
+
 /* ---------- Larger screens ---------- */
 @media (min-width:560px){
+  .nav a[href="#directors"]{display:inline}
   .cta-row{flex-direction:row;justify-content:center;max-width:none}
   .cta-row .btn{padding:0 26px}
   .promise-grid{grid-template-columns:repeat(4,1fr)}
 }
 @media (min-width:760px){
+  .cast{grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+  .cast .cast-steps{grid-template-columns:1fr;gap:26px}
   .stage-bg{aspect-ratio:16/9;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 92%);mask-image:linear-gradient(180deg,#000 60%,transparent 92%)}
   .stage-inner{padding-top:96px}
   .cue{right:6%;top:-6px;font-size:16px;padding:10px 14px}
