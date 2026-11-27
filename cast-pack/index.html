@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cast Pack for Directors · Break a Leg</title>
+<meta name="description" content="A Cast Pack sets up your show's script once. Every actor opens it on their iPad with one link. $19 a show, any cast size.">
+<link rel="canonical" href="https://break-a-leg.app/cast-pack/">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/landing.css">
+<meta name="theme-color" content="#1b0507">
+</head>
+<body class="l">
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="../"><img src="../assets/img/icon-64.png" alt="" width="32" height="32">Break a Leg</a>
+    <nav class="nav" aria-label="Site">
+      <a href="../support/">Support</a>
+      <a href="../privacy/">Privacy</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="cp-hero">
+    <div class="wrap">
+      <p class="eyebrow">For directors and drama teachers</p>
+      <h1>One link. The whole cast is ready.</h1>
+      <p>We set up your show's script once. Every actor opens it on their iPad and starts rehearsing at home.</p>
+    </div>
+  </section>
+
+  <section class="cp-body">
+    <div class="wrap">
+      <div class="cast">
+        <div>
+          <h2 class="cp-h">What you get</h2>
+          <ul class="cp-list">
+            <li>Your script set up and checked, every line.</li>
+            <li>One link for the whole cast. Families tap it and the script is on their shelf.</li>
+            <li>A show code they can type if the link will not open.</li>
+            <li>Changes later. Fix a line and the same link brings it to everyone.</li>
+            <li>No accounts. It does not use up a family's own scripts.</li>
+          </ul>
+
+          <h2 class="cp-h">How it works</h2>
+          <div class="flow cast-steps">
+            <div class="step">
+              <h3><span class="num">1</span>Order your Cast Pack</h3>
+              <p>Pay once for your show. It takes a minute.</p>
+            </div>
+            <div class="step">
+              <h3><span class="num">2</span>Send us your script</h3>
+              <p>A PDF, photos or a .breakaleg file. We set it up, usually within one working day.</p>
+            </div>
+            <div class="step">
+              <h3><span class="num">3</span>Check it, then share the link</h3>
+              <p>Look it over on your iPad first. Then forward one link to the cast.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cast-card" aria-label="Cast Pack price">
+          <p class="cast-price"><b>$19</b> a show</p>
+          <p class="cast-note">Any cast size. For a cast of 15, that is about $1.27 an actor.</p>
+          <a class="btn btn-primary" id="order" href="mailto:developer@gearheartai.org?subject=Cast%20Pack%20for%20our%20show">Order a Cast Pack</a>
+          <p class="pay-note" id="pay-note-email">Email us your show name and closing date and we will get back to you.</p>
+          <p class="pay-note" id="pay-note-stripe" hidden>You pay on a page run by Stripe. We never see your card number.</p>
+          <p class="cast-fine">Each family needs Break a Leg on an iPad. Cast Packs are for scripts you have the right to share with your cast as digital copies.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Gearheart. Break a Leg is an iPad app.</span>
+    <nav aria-label="Footer"><a href="../">Home</a><a href="../support/">Support</a><a href="../privacy/">Privacy Policy</a></nav>
+  </div>
+</footer>
+
+<script>
+/* ===== CAST PACK CHECKOUT LINK: the ONE place to set it =====
+   Paste the Stripe Payment Link for the Cast Pack ($19.00 USD) between the quotes, e.g. "https://buy.stripe.com/xxxxxxxx".
+   While it is empty, the order button opens an email instead. In Stripe, set the Payment Link's "After payment" page
+   to https://break-a-leg.app/cast-pack/thanks/ . No Stripe script runs on this page: the button is a plain link. */
+var CHECKOUT_URL = "";
+/* ===== end ===== */
+(function () {
+  if (!/^https:\/\/buy\.stripe\.com\//.test(CHECKOUT_URL)) return;
+  document.getElementById('order').setAttribute('href', CHECKOUT_URL);
+  document.getElementById('pay-note-email').hidden = true;
+  document.getElementById('pay-note-stripe').hidden = false;
+})();
+</script>
+</body>
+</html>
