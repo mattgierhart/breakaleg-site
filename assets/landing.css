@@ -112,13 +112,28 @@
 .finale h2{color:var(--cream)}
 .finale .lede{color:rgba(255,246,230,.8)}
 
+/* Cast Pack for directors */
+#directors{scroll-margin-top:64px}
+.nav a[href="#directors"]{display:none}
+.cast{display:grid;gap:28px}
+.cast-steps .step{gap:8px}
+.cast-card{background:var(--bg-soft);border-radius:28px;padding:24px;display:flex;flex-direction:column;gap:12px;align-self:start}
+.cast-price{font-family:var(--round);font-size:22px;font-weight:700;margin:0}
+.cast-price b{font-size:56px;line-height:1;font-weight:800;letter-spacing:-.02em}
+.cast-note{margin:0;color:var(--sec)}
+.cast-card .btn{align-self:stretch;margin-top:4px;background:var(--orange);color:#000}
+.cast-fine{margin:0;font-size:14px;line-height:1.4;color:var(--sec)}
+
 /* ---------- Larger screens ---------- */
 @media (min-width:560px){
+  .nav a[href="#directors"]{display:inline}
   .cta-row{flex-direction:row;justify-content:center;max-width:none}
   .cta-row .btn{padding:0 26px}
   .promise-grid{grid-template-columns:repeat(4,1fr)}
 }
 @media (min-width:760px){
+  .cast{grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:start}
+  .cast .cast-steps{grid-template-columns:1fr;gap:26px}
   .stage-bg{aspect-ratio:16/9;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 92%);mask-image:linear-gradient(180deg,#000 60%,transparent 92%)}
   .stage-inner{padding-top:96px}
   .cue{right:6%;top:-6px;font-size:16px;padding:10px 14px}

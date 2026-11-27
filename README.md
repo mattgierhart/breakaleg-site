@@ -13,6 +13,7 @@ Plain static HTML, no build step. The same files are served by two hosts:
 | Page | Path | Used by |
 | --- | --- | --- |
 | `index.html` + `assets/landing.css` | `/` | Landing page (App Store Connect Marketing URL). Mobile first; the stage curtains are pure CSS. |
+| `index.html#directors` | `/#directors` | Cast Pack for directors: $19 a show, any cast size (PRD BR-035). The feature is not built yet; the section says it starts with spring 2027 shows and takes enquiries by email. |
 | `support/index.html` | `/support/` | App Store Connect Support URL (required) |
 | `privacy/index.html` | `/privacy/` | App Store Connect Privacy Policy URL (required) |
 | `404.html` | any missing path | Not-found page |
